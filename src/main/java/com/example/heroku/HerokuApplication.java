@@ -75,6 +75,7 @@ public class HerokuApplication {
       stmt.executeUpdate("INSERT INTO table_timestamp_and_random_string VALUES (now(), '" + getRandomString() + "')");
       ResultSet rs = stmt.executeQuery("SELECT tick FROM table_timestamp_and_random_string");
       ResultSet rs2 = stmt.executeQuery("SELECT random_string FROM table_timestamp_and_random_string");
+      rs2.next();
 
       ArrayList<String> output = new ArrayList<String>();
       while (rs.next()) {
